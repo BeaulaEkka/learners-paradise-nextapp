@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useCarousel } from "@/hooks/useCarousel";
 
-
 export default function Landing() {
   const currentImage = useCarousel({ totalImages: 3 });
   return (

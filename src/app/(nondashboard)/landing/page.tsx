@@ -3,7 +3,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { useCarousel } from "../../../../public/asset-download/client/hooks/useCarousel";
+import { useCarousel } from "@/hooks/useCarousel";
+
 
 export default function Landing() {
   const currentImage = useCarousel({ totalImages: 3 });
@@ -33,7 +34,7 @@ export default function Landing() {
           </div>
         </div>
         <div className="landing__hero-images">
-          {["/hero.jpeg", "/hero2.jpeg", "/hero3.jpeg"].map((src, index) => (
+          {["/hero1.jpg", "/hero2.jpg", "/hero3.jpg"].map((src, index) => (
             <Image
               key={src}
               src={src}

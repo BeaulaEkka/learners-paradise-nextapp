@@ -48,6 +48,23 @@ export default function Landing() {
           ))}
         </div>
       </motion.div>
+      <motion.div
+        initial={{ y: 20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        // animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ amount: 0.3, once: true }}
+        className="landing__featured"
+      >
+        <h2 className="landing__featured-title">Featured Courses</h2>
+        <p className="landing__featured-description">
+          From beginner to andvance we haec all the courseas Lorem ipsum dolor
+          sit amet consectetur adipisicing elit. Nihil, tempora repellat! Veniam
+          nam iste deserunt delectus, ratione quibusdam provident ullam soluta
+          unde quo fuga quisquam repellendus? Omnis minima ipsum ea!
+        </p>
+        <div className="landing__tags">{["web development"]}</div>
+      </motion.div>
     </motion.div>
   );
 }

@@ -4,7 +4,29 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { useCarousel } from "@/hooks/useCarousel";
+import { Span } from "next/dist/trace";
+import { Skeleton } from "@/components/ui/skeleton";
 
+const LoadingSkeleton = () => {
+  return (
+    <div className="landing-skeleton">
+      <div className="landing-skeleton__hero">
+        <Skeleton className="landing-skeleton__title" />
+        <Skeleton className="landing-skeleton__subtitle" />
+        <Skeleton className="landing-skeleton__subtitle-secondary" />
+        <Skeleton className="landing-skeleton__button" />
+        <Skeleton className="landing-skeleton__hero-image" />
+      </div>
+
+      <div className="landing-skeleton__featured">
+        <Skeleton className="landing-skeleton__featured-title" />
+        <Skeleton className="landing-skeleton__featured-description" />
+
+        <div className="landing-skeleton__tags"></div>
+      </div>
+    </div>
+  );
+};
 export default function Landing() {
   const currentImage = useCarousel({ totalImages: 3 });
   return (
@@ -63,7 +85,21 @@ export default function Landing() {
           nam iste deserunt delectus, ratione quibusdam provident ullam soluta
           unde quo fuga quisquam repellendus? Omnis minima ipsum ea!
         </p>
-        <div className="landing__tags">{["web development"]}</div>
+        <div className="landing__tags">
+          {[
+            "web development",
+            "enterprise",
+            "react nextjs",
+            "web development",
+            "enterprise IT",
+          ].map((tag, index) => (
+            <span key={index} className="landing__tag capitalize">
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        <div className="landing__courses">{/* courses dispaly */}</div>
       </motion.div>
     </motion.div>
   );

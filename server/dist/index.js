@@ -63,7 +63,7 @@ app.use((0, cors_1.default)());
 app.get("/", (req, res) => {
     res.send("Hello World-Beaula");
 });
-app.get("/courses", courseRoutes_1.default);
+app.use("/courses", courseRoutes_1.default);
 /* SERVER */
 const port = process.env.PORT || 3000;
 if (!isProduction) {

@@ -30,7 +30,7 @@ app.get("/", (req, res) => {
   res.send("Hello World-Beaula");
 });
 
-app.get("/courses", courseRoutes);
+app.use("/courses", courseRoutes);
 
 /* SERVER */
 const port = process.env.PORT || 3000;

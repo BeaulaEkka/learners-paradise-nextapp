@@ -6,6 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const CourseControllers_1 = require("../controllers/CourseControllers");
 const router = express_1.default.Router();
-router.get("/", CourseControllers_1.listCourse);
+router.get("/", CourseControllers_1.listCourses);
 router.get("/:courseId", CourseControllers_1.getCourse);
 exports.default = router;
